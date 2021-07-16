@@ -1,0 +1,20 @@
+nav{
+    background-color:black;
+    
+}
+.nav-link{
+    color:aqua;
+}
+a:hover{
+    color:yellow;
+}
+h3{
+    text-align: center;
+    color: red;
+}
+#uefacup{
+    width: 350px;
+}
+img{
+    margin-bottom: 20px;
+}

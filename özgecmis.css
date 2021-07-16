@@ -1,0 +1,56 @@
+nav{
+    background-color:black;
+    
+}
+.nav-link{
+    color:aqua;
+}
+a:hover{
+    color:yellow;
+}
+
+#halitziya-pic{
+    width: 400px;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+h5{
+    color:brown;
+    font-family: Fixed, monospace;
+}
+p{
+    font-family: Fixed, monospace;
+}
+
+#ytü-pic{
+    width: 400px;
+    margin-bottom: 50px;
+}
+#necipfazıl-pic{
+    width: 400px;
+    margin-bottom: 50px;
+}
+#saü-pic{
+    width: 400px;
+    margin-bottom: 50px;
+}
+#necipfazıl-text{
+    text-align: center;
+    margin-top: 15px;
+}
+#saü-text{
+    text-align: center;
+}
+#ytü-text{
+    text-align: center;
+}
+#halitziya-text{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+
+
+
+

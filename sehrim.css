@@ -1,0 +1,16 @@
+nav{
+    background-color:black;
+}
+.nav-link{
+    color:aqua;
+}
+a:hover{
+    color:yellow;
+}
+h5{
+    text-align: center;
+}
+.justify-content-center{
+    margin-bottom: 20px;
+}
+

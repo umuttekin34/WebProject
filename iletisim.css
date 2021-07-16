@@ -1,0 +1,17 @@
+
+nav{
+    background-color:black;
+    
+}
+.nav-link{
+    color:aqua;
+}
+a:hover{
+    color:yellow;
+}
+textarea{
+    resize: none;
+}
+span{
+    color: red;
+}

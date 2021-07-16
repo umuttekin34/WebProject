@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>İletişim</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="iletisim.css">
+        <script type="text/javascript">
+            function temizle() {
+            document.getElementById("myForm").reset();
+            }
+            
+               function control(){
+                return final();
+            }
+            
+            function final(){
+                var kural = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                var ad = document.getElementById("isim").value;
+                var soyad = document.getElementById("email").value;
+                var kariyer = document.getElementById("comments").value;
+                var sifre = document.getElementById("sifre").value;
+                
+                var x = true;
+                
+                if(/^\s*$/.test(ad)){
+                    document.getElementById("span").innerHTML="Adınızı yazmadınız!";
+                    x = false;
+                }else{
+                    document.getElementById("span").innerHTML="";
+                }
+                if(/^\s*$/.test(soyad)){
+                    document.getElementById("span1").innerHTML="emaili yazmadınız!";
+                    x =  false;
+                }else if(!kural.test(soyad)){
+                    document.getElementById("span1").innerHTML="lütfen geçerli bir mail giriniz!";
+                    x = false;
+                }else{
+                    document.getElementById("span1").innerHTML="";
+                }
+                if(/^\s*$/.test(kariyer)){
+                    document.getElementById("span2").innerHTML="kariyer alanını doldurunuz";
+                    x = false;
+                }else{
+                    document.getElementById("span2").innerHTML="";
+                }
+                 if(/^\s*$/.test(sifre)){
+                    document.getElementById("span3").innerHTML="lütfen şifrenizi giriniz";
+                    x =  false;
+                }else{
+                    document.getElementById("span3").innerHTML="";
+                }
+                return x;
+            }
+        </script>
+    </head>
+    <body>
+       <nav>
+           <ul class="nav nav-pills nav-justified">
+            <li class="nav-item"><a class="nav-link" href="hakkımda.html">Hakkında</a></li>    
+            <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+            <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#">İletişim</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="özgecmis.html">Özgeçmiş</a></li>
+           </ul>
+       </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    
+                </div>
+                <div class="col-md-4 color">
+                    <br>
+                    <h2>İletişim Sayfası</h2>
+                    
+                    <br>
+            <form action="iletişim_bilgiler.php" method ="post" name="myForm" id="myForm" onsubmit="return control()">
+                <label>Bilgidiğiniz yazılım dillerini seçiniz</label>
+                <br>
+	       
+	           C++<input type = "checkbox" name = "dil[]" value ="C++" checked> 
+	           C#<input type = "checkbox"  name = "dil[]" value ="C#">
+	           Ruby<input type = "checkbox" name = "dil[]" value ="Ruby">
+	           Rust<input type="checkbox" name="dil[]" value="Rust"><!-- burada value değeri gönderir name ile de bu değeri php kodunda okutursun -->		
+	           <br><br>
+	           Yazılım bilginizi seviyenizi seçiniz<br>
+            
+	           Kötü <input type ="radio" name = "derece" value = "Kötü">
+	           Orta <input type ="radio" name = "derece" value = "Orta">
+	           İyi <input type ="radio" name = "derece" value = "İyi" checked>
+	           Çok iyi <input type ="radio" name = "derece" value = "Çok iyi">
+               <br>
+               <br>
+               <textarea name = "comments" id = "comments" rows="10" cols="40" placeholder="kariyerinizi yazınız"></textarea>
+                <br>
+                <span id="span2" name="span2"></span>
+               <br><br>
+            
+               Hangi şehirde yaşıyorsunuz? 
+                <select name = "şehir">
+                    <option value = "antalya" >Antalya</option>
+                    <option value = "kocaeli" >Kocaeli</option>
+                    <option value = "mersin">Mersin</option>
+                    <option value = "istanbul" selected>İstanbul</option>
+                    <option value = "Ankara">Ankara</option>
+                </select>
+                <br><br>
+                
+                
+                İsim :
+                <br>
+                <input type = "text" id = "isim" name="isim">
+                <br>
+                <span id="span" name="span"></span>
+                <br>
+                
+                E mail :
+                <br>
+                <input type = "text" name = "email" id="email" placeholder="örn : @gmail.com">
+                <br>
+                <span id="span1" name="span1"></span>
+                <br>
+               Şifre : 
+                <br>
+                <input type = "password" name = "sifre" id="sifre">
+                <br>
+                <span id="span3" name="span3"></span>
+                <br>
+            
+                <input type = "submit" value = "Gönder" onClick = "final();"/>
+                <input type="button" onclick="temizle()" value="Temizle">
+        </form>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>

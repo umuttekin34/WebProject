@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  flex-flow: column;
+}
+.container{
+    width: 300px;
+    height: 150px;
+    margin-top: 100px;
+    background-color:firebrick;
+    text-align: center;
+}
+p{
+    margin-top: 20px;
+    font-size: 2em;
+    color: aliceblue;
+}

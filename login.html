@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="loginpage.css">
+        <script>
+            function control(){
+                return mailControl();
+            }
+            var x ;
+          function  mailControl(){
+                var kural = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                var email = document.getElementById("email").value;
+              
+               if(/^\s*$/.test(email)){
+                  document.getElementById("hata").innerHTML="email kısmını doldurun..! ";
+                  x = false;
+              }
+                else if(!kural.test(email)){
+                    document.getElementById("hata").innerHTML="geçerli bir mail giriniz!";
+                     x = false;
+                }
+              else{
+                  x = true;
+              }
+              return x;
+          }
+        </script>
+    </head>
+    <body>
+        <nav>
+           <ul class="nav nav-pills nav-justified">
+            <li class="nav-item"><a class="nav-link" href="hakkımda.html">Hakkında</a></li>  
+            <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+            <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+            <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="özgecmis.html">Özgeçmiş</a></li>
+           </ul>
+        </nav>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form  action="process.php" method="post" class="form" id="form" onsubmit="return control()">
+                <input type="text" id="email" name="email" placeholder="Kullanıcı Adı">
+                    <br>
+                    <span id="hata" name="hata"></span>
+                    <br>
+                 <input type="password" id="password" name="password" placeholder="Şifre">
+                
+                <p>
+                <input type="submit" class="btn btn-primary" name="Login" value="Giriş" onClick = "mailControl();">
+                </p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
